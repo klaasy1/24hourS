@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "surveillance.hour.24"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>24hs</name>
+
+  <description>
+      24 Hours Surveillance
+  </description>
+
+  <author href="https://build.phonegap.com" email="kmrikhotso@gmail.com">
+      Klaas Rikhotso
+  </author>
+
+</widget>
