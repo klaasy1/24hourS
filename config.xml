@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" id="surveillance.hour.24" version="1.0.0">
-  <name>24hs</name>
-  <description>24 Hour Surveillance</description>
-  <author/>
-  <access origin="*"/>
-  <content src="index.html"/>
-</widget>
