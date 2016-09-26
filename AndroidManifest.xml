@@ -1,16 +1,34 @@
- 
-<?xml version="1.0" encoding="utf-8"?>
-<manifest android:hardwareAccelerated="true" android:versionCode="%%%VERSION_CODE%%%" android:versionName="%%%VERSION_NAME%%%" android:windowSoftInputMode="adjustPan" package="%%%PACKAGE_NAME%%%" xmlns:android="http://schemas.android.com/apk/res/android">
-  <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
-  <uses-permission android:name="android.permission.INTERNET" />
-  <application android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="%%%APPLICATION_NAME%%%">
-     <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:label="%%%APPLICATION_NAME%%%" android:name="MainActivity" android:theme="@android:style/Theme.Black.NoTitleBar">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
-    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD9fwB7pvo1umuWypCZXnhPsrpl2mLHoe8"/>
-  </application>
-  <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19" />
+<?xml version='1.0' encoding='utf-8'?>
+<manifest android:hardwareAccelerated="true" android:versionCode="10000" android:versionName="1.0.0" android:windowSoftInputMode="adjustPan" package="com.pushapp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application android:debuggable="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:label="@string/app_name" android:launchMode="singleTop" android:name="24hs" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.plugin.gcm.PushHandlerActivity" />
+        <receiver android:name="com.plugin.gcm.CordovaGCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.pushapp" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.plugin.gcm.GCMIntentService" />
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD9fwB7pvo1umuWypCZXnhPsrpl2mLHoe8"/>
+    </application>
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="18" />
+    <permission android:name="com.pushapp.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.pushapp.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>
